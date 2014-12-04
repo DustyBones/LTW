@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rsync -avv $PWD /media/feup/samba/public_html/

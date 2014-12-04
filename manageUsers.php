@@ -5,7 +5,7 @@ function userExists($username) {
   $stmt = $db->prepare('SELECT * FROM users WHERE username = ?');
   $stmt->execute($username);
 
-  return $stmt->fetch() !== false;
+  return ($stmt->fetch() !== false);
 }
 
 function userIsValid($username, $password){
