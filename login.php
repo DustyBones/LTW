@@ -7,7 +7,7 @@ include_once('template/nav.php');
 ?>
 
 <div id="login_form">
-  <form action="login.php" method="post">
+  <form action="process_login.php" method="post">
     <br>Username: <input type="text" name="username">
     <br>Password: <input type="password" name="password">
     <br>

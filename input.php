@@ -1,8 +1,8 @@
 <?php
 function cleanInput($input) {
-  $input = trim($input);
-  $input = stripslashes($input);
-  $input = htmlspecialchars($input);
-  return $input;
+  $input_clean = trim($input);
+  $input_clean = stripslashes($input);
+  $input_clean = htmlspecialchars($input);
+  return $input_clean;
 }
 ?>

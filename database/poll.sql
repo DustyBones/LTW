@@ -12,7 +12,7 @@ CREATE TABLE polls (
 );
 CREATE TABLE questions (
     "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "question" TEXT,
+    "question" VARCHAR,
     "pollID" INTEGER REFERENCES polls
 );
 CREATE TABLE answers (
@@ -25,3 +25,5 @@ CREATE TABLE votes (
   "questionID" INTEGER REFERENCES questions,
   "answerID" INTEGER REFERENCES answers
 );
+
+INSERT INTO users VALUES ('admin', '$2a$10$mwkK8jtGM11e/.NJE9jfQeS9bWIjpiDX1SNh2XdE0wCecMdIwMyJq');
