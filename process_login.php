@@ -10,15 +10,15 @@ $stmt->execute(array(cleanInput($_POST['username'])));
 
 if (($user = $stmt->fetch())){
   if(password_verify($_POST['password'], $user['password'])){
-    header( "refresh: 3; url=home.php" );
+    header( "refresh: 2; url=home.php" );
     $_SESSION['username'] = $_POST['username'];
     echo 'Logging you in...';
   } else {
-    header( "refresh: 3; url=login.php" );
+    header( "refresh: 2; url=login.php" );
     echo 'Login failed. Please check the password provided and try again.';
   }
 } else {
-  header( "refresh: 3; url=login.php" );
+  header( "refresh: 2; url=login.php" );
   echo 'Login failed. Please check the details provided and try again.';
 }
 
