@@ -1,20 +1,16 @@
-<?php
-include_once('template/header.php');
-?>
+<? include_once('template/header.php'); ?>
 
-<?php
-include_once('template/nav.php');
-?>
+<? include_once('template/nav.php'); ?>
+
+<? session_start(); ?>
 
 <div id="login_form">
   <form action="process_login.php" method="post">
-    <br>Username: <input type="text" name="username">
+    <br>Username: <input type="text" name="username" autofocus>
     <br>Password: <input type="password" name="password">
     <br>
-    <br><input type="submit">
+    <br><input class="button" type="submit" value="Log in">
   </form>
 </div>
 
-<?php
-include_once('template/footer.php');
-?>
+<? include_once('template/footer.php'); ?>

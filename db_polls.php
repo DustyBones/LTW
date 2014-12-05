@@ -1,4 +1,6 @@
-<?php
+<?
+include_once('input.php');
+include_once('db.php');
 
 function addPoll($name, $author, $public, $image, $question, $answer) {
   global $db;

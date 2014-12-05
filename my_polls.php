@@ -2,16 +2,17 @@
 <? include_once('template/nav.php'); ?>
 
 <div id=results>
-  <?php
-  include_once('db.php');
-  include_once('db_polls.php');
-  $resultls = getPollByID($_SESSION['username']);
-  if(count($results)==0){
-    echo '<br>You don\'t have any polls.';
-  }else{
-    foreach($results as $r){
-      echo "<br><a id='result'.$r['id'] href='poll.php?id='.$r['id']> $r['name'] </a><br>";
-    }
+  <?
+  $db = new PDO('sqlite:database/poll.db');
+  $stmt = $db->prepare("SELECT * FROM polls WHERE author = ?");
+  $stmt->execute(array($_SESSION['username']));
+  $str="";
+  while($results = $stmt->fetch()){
+    $str = '<br><a id=result'.$results['ID'].' href=poll.php?id='.$results['ID'].'>'.$results['name'].'</a>';
+    echo $str;
+  }
+  if($str===""){
+    echo 'You did not create any polls.';
   }
   ?>
 </div>

@@ -1,13 +1,16 @@
-<?php
-include_once('db.php');
-include_once('db_polls.php');
+<?
+include_once('input.php');
 
-$resultls = getPollsByName($_GET['q']);
-if(count($results)==0){
-  echo "<br>Could not find any poll named $_GET['q']";
-}else{
-  foreach($results as $r){
-    echo "<br><a id="result".$r['id'] href="poll.php?id=".$r['id']> $r['name'] </a><br>";
-  }
+$db = new PDO('sqlite:database/poll.db');
+$stmt = $db->prepare("SELECT * FROM polls WHERE name LIKE ? AND public = 'true'");
+$stmt->execute(array('%'.cleanInput($_GET['q']).'%'));
+$str="";
+while($results = $stmt->fetch()){
+  $str = '<br><a id=result'.$results['ID'].' href=poll.php?id='.$results['ID'].'>'.$results['name'].'</a>';
+
+  echo $str;
+}
+if($str===""){
+  echo 'Could not find any poll named '.$_GET['q'];
 }
 ?>

@@ -1,0 +1,83 @@
+body 	{
+	margin: 0;
+}
+
+
+li 	{
+	width: 320px;
+	padding: 10px;
+	margin: 45px;
+	list-style-type: none;
+	text-align: center;
+}
+
+li>a	{
+	cursor:pointer;
+}
+
+ul 	{
+	padding-left: 0px;
+	position: fixed;
+}
+
+
+form	{
+	padding-left: 500px;
+	padding-top: 200px;
+}
+
+input
+{
+	margin: 3px;
+}
+
+footer
+{
+	text-align: center;
+	position : absolute;
+	top: 550px;
+	left: 600px;
+}
+
+
+#submit {
+	position: relative;
+	left: 100px;
+	background-color: #ccc;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius:1em;
+	color: #000;
+	border-color: none;
+	font-family: 'Oswald';
+	font-size: 20px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+#submit:hover {
+	border-color: red;
+
+}
+
+#home, #search, #list, #new_poll, #sign_in, #sign_up {
+	font: bold 1em/1.5em sans-serif;
+	text-decoration: none;
+	color: white;
+	padding: 2em 7.2em;
+	background: #b8c6df;
+	background: -moz-linear-gradient(top, #b8c6df 0%, #6d88b7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b8c6df), color-stop(100%,#6d88b7));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8c6df', endColorstr='#6d88b7',GradientType=0 );
+	border-radius: 500px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+#home:hover, #search:hover, #list:hover, #new_poll:hover, #sign_in:hover, #sign_up:hover {
+	background: #d8e6ff;
+	background: -moz-linear-gradient(top, #d8e6ff 0%, #8da8d7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8e6ff), color-stop(100%,#8da8d7));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e6ff', endColorstr='#8da8d7',GradientType=0 );
+}

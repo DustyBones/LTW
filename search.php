@@ -1,4 +1,4 @@
-<?php include_once('template/header.php'); ?>
+<? include_once('template/header.php'); ?>
 <script>
 function showPoll(str){
   var xmlhttp;
@@ -19,15 +19,15 @@ function showPoll(str){
 }
 </script>
 
-<?php include_once('template/nav.php'); ?>
+<? include_once('template/nav.php'); ?>
 <div id="search_form">
   <form action="">
     <br>Poll Name: <input type="text" id="poll_name"  onkeyup="showPoll(this.value)" ><br>
   </form>
 </div>
 <div id="results">
-  <p>Results:<span id="pollName"></span></p>
+  <p>Results:<br><span id="pollName"></span></p>
 </div>
 
 
-<?php include_once('template/footer.php'); ?>
+<? include_once('template/footer.php'); ?>

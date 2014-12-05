@@ -1,4 +1,4 @@
-<?php
+<?
 function cleanInput($input) {
   $input_clean = trim($input);
   $input_clean = stripslashes($input);

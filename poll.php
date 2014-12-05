@@ -1,18 +1,15 @@
-<?php
-include_once('template/header.php');
-?>
+<? include_once('template/header.php'); ?>
+<? include_once('template/nav.php'); ?>
 
-<?php
-include_once('template/nav.php');
-include_once('db.php');
-include_once('db_polls.php');
-if(!getPollByID(htmlspecialchars($_GET['id']))) {
-  echo '<p>Poll with id ' . $_GET["id"] . ' not found!</p>';
+<?
+$db = new PDO('sqlite:database/poll.db');
+$stmt = $db->prepare('SELECT * FROM polls WHERE ID = ?');
+$stmt->execute(array(htmlspecialchars($_GET['id'])));
+if(!($results=$stmt->fetch())) {
+  echo 'Poll with id ' . htmlspecialchars($_GET['id']) . ' not found!</p>';
 }else{
 
 }
 ?>
 
-<?php
-include_once('template/footer.php');
-?>
+<? include_once('template/footer.php'); ?>

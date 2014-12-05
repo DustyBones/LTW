@@ -1,10 +1,6 @@
-<?php
-include_once('template/header.php');
-?>
+<? include_once('template/header.php'); ?>
 
-<?php
-include_once('template/nav.php');
-?>
+<? include_once('template/nav.php'); ?>
 <div id="create_poll_form">
   <form action="processCreatePoll.php" method="post">
     <br>Name: <input type="text" name="pollname">
@@ -23,6 +19,4 @@ include_once('template/nav.php');
   </form>
 </div>
 
-<?php
-include_once('template/footer.php');
-?>
+<? include_once('template/footer.php'); ?>

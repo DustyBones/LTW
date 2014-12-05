@@ -1,10 +1,8 @@
-<?php
-include_once('template/header.php');
-?>
+<? include_once('template/header.php'); ?>
 
-<?php
-include_once('template/nav.php');
-?>
+<? include_once('template/nav.php'); ?>
+
+<? session_start(); ?>
 
 <div id="register_form">
   <form action="process_register.php" method="post">
@@ -12,10 +10,8 @@ include_once('template/nav.php');
     <br>Password: <input type="password" name="password1">
     <br>Confirm Password: <input type="password" name="password2">
     <br>
-    <br><input type="submit">
+    <br><input class="button" type="submit" value="Register">
   </form>
 </div>
 
-<?php
-include_once('template/footer.php');
-?>
+<? include_once('template/footer.php'); ?>
