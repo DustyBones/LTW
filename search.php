@@ -26,7 +26,9 @@ function showPoll(str){
   </form>
 </div>
 <div id="results">
-  <p>Results:<br><span id="pollName"></span></p>
+<ul>
+  <p>Results:<li><span id="pollName"></span></li></p>
+</ul>
 </div>
 
 

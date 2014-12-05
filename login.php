@@ -6,8 +6,8 @@
 
 <div id="login_form">
   <form action="process_login.php" method="post">
-    <br>Username: <input type="text" name="username" autofocus>
-    <br>Password: <input type="password" name="password">
+    <br>Username: <input type="text" name="username" placeholder="Username" autofocus>
+    <br>Password: <input type="password" name="password" placeholder="Password">
     <br>
     <br><input class="button" type="submit" value="Log in">
   </form>

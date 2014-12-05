@@ -33,6 +33,8 @@ if(!($results=$stmt->fetch())) {
     }
   }
   echo '<br><input class="button" type="submit" value="Vote">';
+echo '<br><a href="http://www.facebook.com/sharer.php?u=paginas.fe.up.pt/~ei12026/LTW/poll.php?id='.$_GET['id'].'>Share this poll with your friends!</a>';
+echo '<p>asd</p>';
 
 }
 ?>
