@@ -22,13 +22,13 @@ function showPoll(str){
 <? include_once('template/nav.php'); ?>
 <div id="search_form">
   <form action="">
-    <br>Poll Name: <input type="text" id="poll_name"  onkeyup="showPoll(this.value)" ><br>
+    <br>Poll Name: <input type="text" id="poll_name"  onkeyup="showPoll(this.value)" autofocus><br>
   </form>
 </div>
 <div id="results">
-<ul>
-  <p>Results:<li><span id="pollName"></span></li></p>
-</ul>
+  <ul>
+    <p>Results:<li><span id="pollName"></span></li></p>
+  </ul>
 </div>
 
 

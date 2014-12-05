@@ -6,7 +6,7 @@
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	background: black;	
+	background: black;
 }
 .slider_wrapper{
 	overflow: hidden;
@@ -40,10 +40,10 @@
 	opacity: 0.9;
 }
 #prev{
-	background: #000 url('arrowleft.png') no-repeat center;
+	background: #000 url('img/arrowleft.png') no-repeat center;
 	left: 0px;
 }
 #next{
-	background: #000 url('arrowright.png') no-repeat center;
+	background: #000 url('img/arrowright.png') no-repeat center;
 	right: 0px;
 }
