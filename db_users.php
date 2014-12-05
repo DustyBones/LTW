@@ -5,7 +5,7 @@ function userExists($username) {
   $stmt = $db->prepare('SELECT * FROM users WHERE username = ?');
   $stmt->execute($username);
 
-  return ($stmt->fetch() != false);
+  return $stmt->fetch() !== false;
 }
 
 function userIsValid($username, $password){
@@ -14,8 +14,11 @@ function userIsValid($username, $password){
   $stm->prepare('SELECT * FROM users WHERE username = ?');
   $stm->execute($username);
   $user = $stm->fetch();
-
-  return ($user != false) && password_verify($password, $user['password']);
+  if ($user !== false){
+    return password_verify($password, $user['password']);
+  } else {
+    return false;
+  }
 }
 
 function userRegister($username, $password){
