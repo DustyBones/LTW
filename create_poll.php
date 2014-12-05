@@ -1,17 +1,16 @@
 <? include_once('template/header.php'); ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#btnA").click(function(){
-    $("p").append(" ");
-  });
-
   $("#btnQ").click(function(){
-    $("ol").append(
-    '<br>Question: <input type="text" name="question">
-    <br>
-    <br>Answer 1: <input type="text" name="answer1">
-    <br>Answer 2: <input type="text" name="answer2">');
+    $("form").append(
+    '<p>Question: <input type="text" name="question"></p>
+    <ol>
+    <li><input type="text" name="answer1"></li>
+    <li><input type="text" name="answer2"></li>
+    <li><input type="text" name="answer3"></li>
+    <li><input type="text" name="answer4"></li>
+    <li><input type="text" name="answer5"></li>
+    </ol>');
   });
 });
 </script>
@@ -19,21 +18,20 @@ $(document).ready(function(){
 <? include_once('template/nav.php'); ?>
 <div id="create_poll_form">
   <form action="process_create_poll.php" method="post">
-    <br>Name: <input type="text" name="pollname">
-    <br>Availability:
+    <p>Name: <input type="text" name="pollname"></p>
+    <p>Availability:
     <input type="radio" name="availability" value="Private">Private
     <input type="radio" name="availability" value="Public">Public
-    <br>
-    <br>Question: <input type="text" name="question">
-    <br>
-    <br>Answer 1: <input type="text" name="answer1">
-    <br>Answer 2: <input type="text" name="answer2">
-
-    <button id="btn1">Add answer</button>
-    <button id="btn2">Add question</button>
-    <br>
-    <br>Image File:
-    <br><input type="submit">
+    </p>
+    <p>Question: <input type="text" name="question1"></p>
+    <ol>
+    <li><input type="text" name="answer1"></li>
+    <li><input type="text" name="answer2"></li>
+    <li><input type="text" name="answer3"></li>
+    <li><input type="text" name="answer4"></li>
+    <li><input type="text" name="answer5"></li>
+    </ol>
+    <p><input class="button" type="submit" value="Create"></p>
   </form>
 </div>
 

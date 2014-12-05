@@ -1,33 +1,39 @@
-<?php
-function userExists($username) {
+<?
+include_once('input.php');
+include_once('db.php');
+require_once('lib/password.php');
+
+function userExists() {
   global $db;
 
   $stmt = $db->prepare('SELECT * FROM users WHERE username = ?');
-  $stmt->execute($username);
+  $stmt->execute(array(cleanInput($_POST['username'])));
 
   return $stmt->fetch() !== false;
 }
 
-function userIsValid($username, $password){
+function userIsValid(){
   global $db;
+  $stmt= $db->prepare('SELECT * FROM users WHERE username = ?');
+  $stmt->execute(cleanInput($_POST['username']));
 
-  $stm->prepare('SELECT * FROM users WHERE username = ?');
-  $stm->execute($username);
-  $user = $stm->fetch();
-  if ($user !== false){
-    return password_verify($password, $user['password']);
+  die('here');
+  if (($user = $stmt->fetch())){
+    return password_verify($_POST['password'], $user['password']);
   } else {
     return false;
   }
 }
 
-function userRegister($username, $password){
+function userRegister(){
   global $db;
-  if(userExists($username)){
+  $password = $_POST['password'];
+  if(userExists(cleanInput($_POST['username']))){
     return false;
   }else{
-    $stm->prepare('INSERT INTO users VALUES (?, ?)');
-    $stm->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $stmt->prepare('INSERT INTO users VALUES (?, ?)');
+    $stmt->execute(array(cleanInput($_POST['username']), $hash));
     return true;
   }
 }
